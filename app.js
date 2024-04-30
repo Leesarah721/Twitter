@@ -8,8 +8,8 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.use('/tweets', tweetsRouter);  //tweetsRouter 미들웨어 등록
-app.use('/auth', authRouter); //authRouter 미들웨어 등록
+app.use('/tweets', tweetsRouter);  
+app.use('/auth', authRouter); 
 
 app.use((req, res, next) => {
     res.sendStatus(404);
