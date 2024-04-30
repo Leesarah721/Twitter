@@ -1,7 +1,7 @@
 import express from 'express';
 import { body } from 'express-validator';
 import * as authController from "../controller/auth.js";
-import { validate } from "../middlewear/validator.js";
+import { validate } from "../middleware/validator.js";
 
 const router = express.Router();
 
@@ -13,5 +13,9 @@ const validateSignup = [
 ]
 
 router.post('/signup', validateSignup, authController.signup);
+
 router.post('/login', authController.login);
+
+router.get('/me', authController.verify); //추가
+
 export default router;

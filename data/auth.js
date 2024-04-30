@@ -1,8 +1,8 @@
 let users = [
     {
         id: '1',
-        userid: "apple",
-        password: "1111",
+        username: "apple",
+        password: "$2b$10$/4lYMMsFC6rBSxlI1/qP5uwROuFZMtALVttv/2TbQ0bJXIFGeqPXe",
         name: "김사과",
         email: "apple@apple.com",
         url: "https://www.logoyogo.com/web/wp-content/uploads/edd/2021/02/logoyogo-1-45.jpg"
@@ -10,8 +10,8 @@ let users = [
     
     {
         id: '2',
-        userid: "banana",
-        password: "2222",
+        username: "banana",
+        password: "$2b$10$/4lYMMsFC6rBSxlI1/qP5uwROuFZMtALVttv/2TbQ0bJXIFGeqPXe",
         name: "반하나",
         email: "banana@banana.com",
         url: "https://img.freepik.com/premium-vector/banana-cute-kawaii-style-fruit-character-vector-illustration_787461-1772.jpg"
