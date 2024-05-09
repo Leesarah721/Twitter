@@ -1,22 +1,17 @@
-// import mysql from 'mysql2'; // 삭제
-import { config } from  '../config.js';
-import SQ from 'sequelize'; //추가
+import { config } from '../config.js';
+import MongoDb from 'mongodb';
 
-// 삭제
-// const pool = mysql.createPool({
-//     host: config.db.host,
-//     port: config.db.port,
-//     user: config.db.user,
-//     database: config.db.database,
-//     password: config.db.password
-// });
+let db;
 
-// export const db = pool.promise();
+export async function connectDB(){
+    console.log(config.db.host);
+    return MongoDb.MongoClient.connect(config.db.host).then((client) => db = client.db());
+}
 
-const { host, user, database, password, port } = config.db;
+export function getUsers(){
+    return db.collection('users');
+}
 
-export const sequelize = new SQ.Sequelize(database, user, password, {
-    host, 
-    dialect: 'mysql',
-    logging: false
-})
+export function getTweets(){
+    return db.collection('tweets');
+}
