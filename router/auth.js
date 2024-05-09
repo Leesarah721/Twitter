@@ -9,7 +9,7 @@ const router = express.Router();
 const validateLogin = [
     body('username').trim().notEmpty().withMessage('username을 입력하세요'),
     body('password').trim().isLength({min:4}).withMessage('password는 최소 4자 이상 입력하세요'), validate
-];
+];  
 const validateSignup = [
     ... validateLogin,
     body('name').trim().notEmpty().withMessage('name을 입력하세요'),
