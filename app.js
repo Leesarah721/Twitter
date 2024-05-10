@@ -28,7 +28,13 @@ app.use((req, res, next) => {
 // })
 
 //3.
+//connectDB().then((db) => {
+//    console.log('몽고DB 연결 성공!')
+//    app.listen(config.host.port);
+//}).catch(console.error);
+
+//4.
 connectDB().then((db) => {
-    console.log('몽고DB 연결 성공!')
+    console.log('몽구스를 사용하여 몽고디비에 접속성공')
     app.listen(config.host.port);
 }).catch(console.error);
