@@ -4,6 +4,7 @@ import tweetsRouter from './router/tweets.js';
 import authRouter from './router/auth.js';
 import { config } from "./config.js";
 import { connectDB } from "./db/database.js";
+import { initSocket } from "./connection/socket.js" //추가
 
 const app = express();
 
@@ -17,24 +18,10 @@ app.use((req, res, next) => {
     res.sendStatus(404);
 });
 
-//DB 연결 테스트
 
-//1. 
-//db.getConnection().then(connection => console.log(connection)); //추가
-
-//2.
-// sequelize.sync().then(()=>{
-//     app.listen(config.host.port);
-// })
-
-//3.
-//connectDB().then((db) => {
-//    console.log('몽고DB 연결 성공!')
-//    app.listen(config.host.port);
-//}).catch(console.error);
-
-//4.
+//DB 연결 테스트! //socket으로 연결
 connectDB().then((db) => {
-    console.log('몽구스를 사용하여 몽고디비에 접속성공')
-    app.listen(config.host.port);
+    const server = app.listen(config.host.port);
+    initSocket(server);
 }).catch(console.error);
+

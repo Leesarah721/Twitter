@@ -12,7 +12,7 @@ import { config } from '../config.js';
 문제
 jwt.js를 참고하여 controller/auth.js 에 토큰을 발행하고 login()에 로그인 완료되면 클라이언트에 토큰을 출력하는 프로세스를 만들어보자
 */
-
+    
 // jwt 토근생성 
 function createJwtToken(id){
     return jwt.sign({id}, config.jwt.secretKey, {expiresIn: config.jwt.expiresInSec});

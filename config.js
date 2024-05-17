@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 function required(key, defaultValue=undefined){
-    const value = process.env[key] || defaultValue
+    const value = process.env[key] || defaultValue; 
     // process.env() : 시스템에 접근 관련한 모듈 
     // env 다룰 수 있는 기능이 들어있음 
     // 먼저 전달받은 키가 있는지 확인,
